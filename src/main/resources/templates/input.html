@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Podcast</title>
+</head>
+<body>
+<form th:object="${newPodcast}" th:action="@{/update/{id}(id=${newPodcast.id})}" method='POST'>
+Name: <input name="name" size="20" th:field="*{name}"> <br />
+Genre: <input name="genre" size="10" th:field="*{genre}"><br />
+Subscriber Count: <input name="subscriberCount" size="20" th:field="*{subscriberCount}"><br />
+Host Name: <input name="host.hName" size="20" th:field="*{host.hName}"><br />
+Profession: <input name="host.profession" size="20" th:field="*{host.profession}"><br />
+Number of Shows:<input name="host.numOfShows" size="20" th:field="*{host.numOfShows}"><br />
+<input name="submit" type="submit" value="submit"/>
+</form>
+<a href="viewAll">View all Podcasts</a>
+</body>
+</html>

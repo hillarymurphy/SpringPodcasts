@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Podcasts</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentPodcast : ${podcasts}">
+<td th:text="${currentPodcast.id}"/>
+<td th:text="${currentPodcast.name}"/>
+<td th:text="${currentPodcast.genre}"/>
+<td th:text="${currentPodcast.subscriberCount}"/>
+<td th:text="${currentPodcast.host.hName}"/>
+<td th:text="${currentPodcast.host.profession}"/>
+<td th:text="${currentPodcast.host.numOfShows}"/>
+<td><a th:href="@{/edit/{id}(id=${currentPodcast.id})}">Edit</a></td>
+<td><a th:href="@{/delete/{id}(id=${currentPodcast.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputPodcast">Add a new Podcast</a>
+</body>
+</html>
