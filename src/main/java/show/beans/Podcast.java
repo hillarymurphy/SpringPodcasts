@@ -8,6 +8,11 @@ import javax.persistence.Id;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 @Entity
 public class Podcast {
 	@Id
@@ -20,10 +25,6 @@ public class Podcast {
 	@Autowired
 	private Host host;
 	
-	public Podcast() {
-		super();
-		this.subscriberCount = 150000;
-	}
 	
 	public Podcast(String name) {
 		super();
@@ -42,51 +43,4 @@ public class Podcast {
 		this.genre = genre;
 		this.subscriberCount = subscriberCount;
 	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getGenre() {
-		return genre;
-	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-
-	public int getSubscriberCount() {
-		return subscriberCount;
-	}
-
-	public void setSubscriberCount(int subscriberCount) {
-		this.subscriberCount = subscriberCount;
-	}
-
-	public Host getHost() {
-		return host;
-	}
-
-	public void setHost(Host host) {
-		this.host = host;
-	}
-
-	@Override
-	public String toString() {
-		return "Podcast [id=" + id + ", name=" + name + ", genre=" + genre + ", subscriberCount=" + subscriberCount
-				+ ", host=" + host + "]";
-	}
-
 }
